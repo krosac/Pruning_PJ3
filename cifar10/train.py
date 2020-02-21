@@ -1,3 +1,9 @@
+""" 
+Code for loading CIFAR10 and training was originally written 
+for CS 231n at Stanford University (cs231n.stanford.edu). 
+It has been modified for pruning.
+For the original version, please visit cs231n.stanford.edu.  
+"""
 import tensorflow as tf
 import numpy as np
 import math
