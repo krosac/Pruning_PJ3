@@ -16,8 +16,4 @@ def model(X,y):
     y_out = tf.matmul(h1_flat,W1) + b1
     return y_out
 
-from models import densenet
-def model(X,y):
-    out = densenet.DenseNet(X,nb_blocks=4,filters=24,training=True).model
-    return out
     
