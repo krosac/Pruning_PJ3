@@ -16,6 +16,10 @@ def get_prune_op(sess, train_gradient, percentage=0.5):
     #           prune_op = var.assign(new_var_np)
     #           # apply parameter pruning by sess.run(prune_op)
     #           prune_gradient = train_gradient * mask for each parameter
+    #               Example:
+    #                   mask = np.zeros(96, dtype=np.float32)
+    #                   mask_tensor = tf.convert_to_tensor(mask)
+    #                   prune_gradient = [[tf.multiply(v[0], mask_tensor), v[1]] for v in train_gradient if 'fcn/conv1-1/bias' in v[1].name]
     #        return prune_gradient   
     # ================================================================ #
     
