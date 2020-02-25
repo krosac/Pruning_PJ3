@@ -12,7 +12,7 @@ def get_CIFAR10_data(num_training=49000, num_validation=1000, num_test=10000):
     we used for the SVM, but condensed to a single function.  
     """
     # Load the raw CIFAR-10 data
-    cifar10_dir = 'cs231n/datasets/cifar-10-batches-py'
+    cifar10_dir = 'cifar-10-batches-py'
     X_train, y_train, X_test, y_test = load_CIFAR10(cifar10_dir)
 
     # Subsample the data
