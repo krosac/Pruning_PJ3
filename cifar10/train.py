@@ -151,7 +151,7 @@ class Model:
             # Save the model checkpoint periodically.
             if e % save_every == 0:
                 checkpoint_path = os.path.join('./ckpt/', 'model.ckpt')
-                saver.save(sess, checkpoint_path, global_step=int(e+1))
+                self.saver.save(sess, checkpoint_path, global_step=int(e+1))
         return total_loss,total_correct 
         
     def train(self):
