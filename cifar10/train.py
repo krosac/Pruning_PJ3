@@ -182,5 +182,5 @@ class Model:
 if __name__=="__main__":
     m = Model()
     m.load_cifar10()
-    m.construct_model(ckpt_dir='ckpt')
+    m.construct_model(ckpt_dir=None)
     m.train()
