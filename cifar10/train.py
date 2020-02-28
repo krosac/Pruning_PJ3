@@ -10,6 +10,7 @@ import math
 import timeit
 import matplotlib.pyplot as plt
 import os
+import shutil
 
 from data import get_CIFAR10_data
 from model import model
@@ -61,21 +62,6 @@ class Model:
         # split train_step = optimizer.minimize(self.mean_loss)
         train_gradient = self.optimizer.compute_gradients(self.mean_loss)
         
-        # ================================================================ #
-        # YOUR CODE HERE:
-        #   implement in prune_utils.py
-        #   1.prune parameters based on your threshold
-        #   2.get pruned gradient update operator accordingly, save to prune_gradient
-        # ================================================================ #
-        
-        prune_gradient = get_prune_op(self.sess, train_gradient, percentage=0.6)
-        
-        # ================================================================ #
-        # END YOUR CODE HERE
-        # ================================================================ #
-        
-        self.train_op = self.optimizer.apply_gradients(prune_gradient, global_step=self.global_step)
-        
         # initialize or load model parameters
         self.saver = tf.train.Saver(max_to_keep=10)
         if ckpt_dir is not None:
@@ -84,6 +70,31 @@ class Model:
         else:
             self.sess.run(tf.global_variables_initializer())
             print('Initialize variables')
+        # ================================================================ #
+        # YOUR CODE HERE:
+        #   implement in prune_utils.py
+        #   1.prune parameters based on your threshold 
+        #     (make sure pruning is effectively applied in step 1)
+        #   2.get pruned gradient update operator accordingly, save to prune_gradient
+        # ================================================================ #
+        
+        prune_gradient = get_prune_op(self.sess, train_gradient, percentage=0.6)
+        
+        # ================================================================ #
+        # END YOUR CODE HERE
+        # ================================================================ #
+        # save pruned parameters
+        tmp_dir = '__tmp__'
+        if not os.path.exists(tmp_dir):
+            os.makedirs(tmp_dir)
+        self.saver.save(self.sess, os.path.join(tmp_dir, 'pruned_model.ckpt'))       
+        # define gradients and initialize optimizer parameters
+        self.train_op = self.optimizer.apply_gradients(prune_gradient, global_step=self.global_step)
+        self.sess.run(tf.global_variables_initializer())
+        # reload pruned parameters
+        self.saver.restore(self.sess, tf.train.latest_checkpoint(tmp_dir))
+        if os.path.exists(tmp_dir):
+            shutil.rmtree(tmp_dir)        
         
         
     def run_model(self, sess, predict, loss_val, Xd, yd,
@@ -171,5 +182,5 @@ class Model:
 if __name__=="__main__":
     m = Model()
     m.load_cifar10()
-    m.construct_model(ckpt_dir=None)
+    m.construct_model(ckpt_dir='ckpt')
     m.train()
