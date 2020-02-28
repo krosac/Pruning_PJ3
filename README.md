@@ -16,3 +16,8 @@ Test you can train the simple example model
 python3 train.py
 ```
 If no error occurs, you can make your model in model.py and start working on project 3. Puning funcions can be implemented in prune_utils.py
+
+For loading trained checkpoint, please find following line at the end of train.py and change ckpt_dir to your own one.
+```
+m.construct_model(ckpt_dir=None)
+```
