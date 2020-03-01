@@ -1,5 +1,6 @@
 ## Pruning_PJ3
 **CIFAR10 related code from Stanford CS231n homework http://cs231n.github.io/**
+
 **PASCAL VOC related code from https://github.com/xuzheyuan624/yolov3-pytorch**
 
 Thanks for taking the class. In project 3, you will work on network pruning. 
