@@ -5,6 +5,7 @@ Thanks for taking the class. In project 3, you will work on network pruning.
 In the cifar10 folder, training code template is provided for magnitutde-based weight pruning.
 You don't have to follow the code and you are welcome to make changes to the provided code for your purpose.
 
+### CIFAR10
 Change to cifar10 directory
 ```
 cd cifar10
@@ -22,5 +23,8 @@ For loading trained checkpoint, please find following line at the end of train.p
 m.construct_model(ckpt_dir=None)
 ```
 If no error occurs, you can make your model in model.py and start working on project 3. Puning funcions can be implemented in prune_utils.py
+
+### PASCAL VOC
+https://drive.google.com/file/d/1zoGUFk9Tfoll0vCteSJRGa9I1yEAfU-a/view
 
 
