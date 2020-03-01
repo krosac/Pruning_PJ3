@@ -50,4 +50,4 @@ python3 main.py eval --load PRETRAINED_PTH --name=voc --gpu False
 Pruning funcions can be implemented in prune_utils.py. 
 
 **Notice** Evaluation can be very slow for not-well-trained model due to too many predicted bounding boxes. So train several epoches then evaluate.
-
+**Notice** I have uploaded pretrained weights for yolov3 on PASCAL VOC on google drive https://drive.google.com/file/d/1PnhVkGkjiBalNK_gBNS0bw9SN39eLcXu/view?usp=sharing. It has been trained for 27 epoches and achieves  mAP(IoU=0.5) as 73.2, which can be used as a starting point.
