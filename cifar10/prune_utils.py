@@ -6,7 +6,7 @@ def get_prune_op(sess, train_gradient, percentage=0.5):
     # ================================================================ #
     # YOUR CODE HERE:
     #   1.find prunable variables i.e. kernel weight/bias
-    #   2.prune parameters based on your threshold, specified by input argument percentage
+    #   2.prune parameters based on your threshold, calculated based on input argument percentage!
     #   3.get pruned gradient update operator accordingly, save to prune_gradient
     #   example pseudo code for step 2-3:
     #       for var in prunable_variables:
