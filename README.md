@@ -1,5 +1,6 @@
 ## Pruning_PJ3
-**Just updated the cifar10/train.py about model loading code position**
+**CIFAR10 related code from Stanford CS231n homework http://cs231n.github.io/**
+**PASCAL VOC related code from https://github.com/xuzheyuan624/yolov3-pytorch**
 
 Thanks for taking the class. In project 3, you will work on network pruning. 
 In the cifar10 folder, training code template is provided for magnitutde-based weight pruning.
@@ -25,6 +26,7 @@ m.construct_model(ckpt_dir=None)
 If no error occurs, you can make your model in model.py and start working on project 3. Pruning funcions can be implemented in prune_utils.py
 
 ### PASCAL VOC
+**Code from https://github.com/xuzheyuan624/yolov3-pytorch**
 Change to pascal_voc directory
 ```
 cd pascal_voc
