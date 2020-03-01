@@ -41,10 +41,10 @@ Change to "data" direcotry and download pascal voc dataset. Uncompress the tar f
 ```
 cd ..
 ```
-Return to pascal_voc direcotry and run following commands below for training/evaluation. No need to load darknet53 backbone weights with "--load" argument, since it is automatically loaded every time you run the script. Use "--load" to specify the path for your own checkpoint.
+Return to pascal_voc direcotry and run following commands below for training/evaluation. No need to load darknet53 backbone weights with "--load" argument, since it is automatically loaded every time you run the script. Use "--load" to optionally specify the path for your own checkpoint. 
 ```
-python3 main.py train --load PRETRAINED_PTH --gpu False
-python3 main.py eval --load PRETRAINED_PTH --gpu False
+python3 main.py train --load PRETRAINED_PTH --name=voc --gpu False
+python3 main.py eval --load PRETRAINED_PTH --name=voc --gpu False
 ```
 Pruning funcions can be implemented in prune_utils.py. 
 
