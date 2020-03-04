@@ -26,6 +26,12 @@ m.construct_model(ckpt_dir=None)
 ```
 If no error occurs, you can make your model in model.py and start working on project 3. Pruning funcions can be implemented in prune_utils.py
 
+**Notice** If you are using Tensorflow official models at https://github.com/tensorflow/models/tree/master/research/slim/nets, please check how it can be instantiated correctly. For example, you are required to use code as follows for mobilenet_v1.
+```
+with tf.contrib.slim.arg_scope(mobilenet_v1_arg_scope(is_training=True)):
+    out, _ = mobilenet_v1(X, num_classes=10)
+```
+
 ### PASCAL VOC
 **Code from https://github.com/xuzheyuan624/yolov3-pytorch**
 
