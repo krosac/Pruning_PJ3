@@ -43,8 +43,9 @@ Create "weights" directory and download pretrained backbone weights for darknet5
 ```
 cd data
 sh get_voc_dataset.sh
+python voc_label.py
 ```
-Change to "data" direcotry and download pascal voc dataset. Uncompress the tar file and you should find "VOCdevkit" under "data" directory.
+Change to "data" direcotry and download pascal voc dataset. Uncompress the tar file and you should find "VOCdevkit" under "data" directory. 
 ```
 cd ..
 ```
