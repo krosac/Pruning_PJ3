@@ -45,7 +45,7 @@ cd data
 sh get_voc_dataset.sh
 python voc_label.py
 ```
-Change to "data" direcotry and download pascal voc dataset. Uncompress the tar file and you should find "VOCdevkit" under "data" directory. 
+Change to "data" direcotry and download pascal voc dataset. Uncompress the tar file and you should find "VOCdevkit" under "data" directory. Meanwhile, check image path names in xx_val.txt and xx_train.txt to make sure training scripts can find them.
 ```
 cd ..
 ```
